@@ -1,0 +1,31 @@
+version = 1
+revision = 2
+requires-python = ">=3.12"
+
+[manifest]
+members = [
+    "btb",
+    "monopy",
+    "recording-parser",
+]
+
+[[package]]
+name = "btb"
+version = "0.1.0"
+source = { editable = "projects/core/btb" }
+
+[[package]]
+name = "monopy"
+version = "0.1.0"
+source = { virtual = "." }
+
+[[package]]
+name = "recording-parser"
+version = "0.1.0"
+source = { editable = "projects/tools/recording_parser" }
+dependencies = [
+    { name = "btb" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "btb", editable = "projects/core/btb" }]
